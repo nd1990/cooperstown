@@ -40,7 +40,7 @@
       n(t).find(".nav-search").length > 0 &&
         n(t)
           .find(".nav-search")
-          .find("form")
+          .find(".nav-search-inner")
           .prepend(
             "<span class='nav-search-close-button' tabindex='0'>&#10005;</span>"
           ),

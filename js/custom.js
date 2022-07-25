@@ -3,8 +3,6 @@ var $ = jQuery.noConflict();
 
 jQuery(document).ready(function(){
      
-
-  
    $(function() {
     $('.mobile-slider').slick({
 		slidesToShow: 1,
@@ -92,38 +90,27 @@ $(window).on("load", function () {
 
 	// Four Item Slider
 	$(".four-item-slider").slick({
-		slidesToShow: 1,
+		slidesToShow: 4,
 		slidesToScroll: 1,
 		dots: true,
 		arrows: true,
 		responsive: [
 			{
-				breakpoint: 9999,
-				settings: {
-					slidesToShow: 4,
-					slidesToScroll: 4,
-				}
-			},
-			{
 				breakpoint: 1400,
 				settings: {
 					slidesToShow: 3,
-					slidesToScroll: 3,
 				}
 			},
 			{
 				breakpoint: 1024,
 				settings: {
 					slidesToShow: 2,
-					slidesToScroll: 2,
 				}
 			},
 			{
 				breakpoint: 768,
 				settings: {
-					variableWidth: true,
-					arrows: false,
-					slidesToScroll: 1,
+					slidesToShow: 1,
 				}
 			},
 		]
@@ -202,38 +189,33 @@ $(window).on("load", function () {
 
 	// Five Item Slider
 	$(".five-item-slider").slick({
-		slidesToShow: 1,
+		slidesToShow: 5,
 		slidesToScroll: 1,
 		dots: true,
 		arrows: true,
 		responsive: [
 			{
-				breakpoint: 9999,
-				settings: {
-					slidesToShow: 5,
-					slidesToScroll: 5,
-				}
-			},
-			{
 				breakpoint: 1400,
 				settings: {
 					slidesToShow: 4,
-					slidesToScroll: 4,
 				}
 			},
 			{
 				breakpoint: 1024,
 				settings: {
 					slidesToShow: 3,
-					slidesToScroll: 3,
 				}
 			},
 			{
 				breakpoint: 768,
 				settings: {
-					variableWidth: true,
-					arrows: false,
-					slidesToScroll: 1,
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 376,
+				settings: {
+					slidesToShow: 1,
 				}
 			},
 		]
@@ -292,11 +274,19 @@ $(window).on("load", function () {
 });
 
 
+$(window).on("load resize",function(e){
+    let discover_img_height = $(".homepage-discover .block-img").outerHeight(true);
+	let arrow_top = discover_img_height/2;
+	$(".homepage-discover .slick-arrow").css("top", arrow_top);
 
+	//Equal height
+	$maxHeight = 0;
+  $("[data-class='same-height']").each(function(){
+    if($(this).height() > $maxHeight) {
+      $maxHeight = $(this).height();
+    }
+  });
+  $("[data-class='same-height']").height($maxHeight);
 
-
-
-
-
-
+});
 
