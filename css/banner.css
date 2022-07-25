@@ -6,7 +6,21 @@
 .banner-content{position:absolute;z-index:2;bottom:52px;left:0;width:100%;align-self:flex-end;}
 .banner-content .btn{width:100%;}
 .banner-title{color:#fff;font-weight:700;font-size:2.125rem;line-height:2.625rem;margin-bottom:30px;}
+ 
 
+.video-container{
+  width: 100vw;
+  height: auto;
+}
+    
+.banner-img iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 112vh;
+  transform: translate(-50%, -50%);
+}
 /* Responsive Media Queries --------------------------------------------------------------------------------------------------------*/
 @media (max-width:375px){
   .banner-content{max-width:338px;}
